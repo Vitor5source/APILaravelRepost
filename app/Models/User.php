@@ -12,27 +12,16 @@ class User extends Authenticatable
 {
     use HasFactory,HasApiTokens, Notifiable;
     
-    protected $table = 'students';
+    protected $table = 'users';
 
     protected $fillable = [
         'name',
         'email',
-        'password',
-        'class_id', 
-        'ra',
-        'period'
+        'password'
         
     ];
     
 
-    public function Users()
-    {
-        return $this->hasMany(Presentes_model::class);
-       
-    }
-    public function Turmas(){
-        return $this->belongsTo(Turma_model::class);
-    }
     
     protected $hidden = [
         'password',
